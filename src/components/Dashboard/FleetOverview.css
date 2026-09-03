@@ -1,0 +1,27 @@
+.fleet-overview {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.fleet-overview-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-overview-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.fleet-overview-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.fleet-overview-metric--attention .fleet-overview-value {
+  color: #c62828;
+}

@@ -1,0 +1,33 @@
+.fleet-map-section {
+  flex: 2;
+  min-width: 320px;
+}
+
+.fleet-map-heading {
+  font-size: 14px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+/* aspect-ratio keeps the container's width:height locked to the source
+   image's actual dimensions (900x560, verified directly against layout.png), so the
+   percentage positions computed in domain/mapCoordinates.ts stay aligned
+   at any rendered width — no JS measurement, no fixed pixel sizing. */
+.fleet-map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 900 / 560;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fleet-map-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

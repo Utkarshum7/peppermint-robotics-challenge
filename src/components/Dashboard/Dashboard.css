@@ -1,0 +1,84 @@
+/* Structural layout only — spacing and sizing for the dashboard's overall grid. */
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.dashboard-controls-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dashboard-main-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Search sits directly above Robot Details so the operator's "find it,
+   then inspect it" workflow reads top-to-bottom in one column beside the
+   map, rather than search living apart from the details panel it feeds. */
+.dashboard-sidebar {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Below this width the map and details panel each get too little room to
+   stay usable side by side — stack them instead of letting flex squeeze
+   the map into an unreadable sliver. */
+@media (max-width: 700px) {
+  .dashboard-main-row {
+    flex-direction: column;
+  }
+
+  .dashboard-main-row > * {
+    width: 100%;
+  }
+}
+
+.dashboard-loading,
+.dashboard-error {
+  padding: 32px;
+  text-align: center;
+}
+
+.dashboard-error {
+  color: #b00020;
+}
+
+.placeholder-section {
+  border: 1px dashed #bbb;
+  border-radius: 4px;
+  padding: 16px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.placeholder-section h2 {
+  font-size: 14px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+.placeholder-section p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}

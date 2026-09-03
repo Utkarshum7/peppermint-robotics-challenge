@@ -1,0 +1,58 @@
+.trend-chart {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.trend-chart-heading {
+  font-size: 14px;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+.trend-chart-description {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 10px;
+}
+
+.trend-chart-empty {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.trend-chart-svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.trend-chart-gridline {
+  stroke: #eee;
+  stroke-width: 1;
+}
+
+.trend-chart-axis-label {
+  font-size: 9px;
+  fill: #888;
+}
+
+.trend-chart-line {
+  fill: none;
+  stroke: #1565c0;
+  stroke-width: 2;
+}
+
+.trend-chart-dot {
+  fill: #1565c0;
+}
+
+.trend-chart-current {
+  font-size: 12px;
+  color: #444;
+  margin: 8px 0 0;
+}

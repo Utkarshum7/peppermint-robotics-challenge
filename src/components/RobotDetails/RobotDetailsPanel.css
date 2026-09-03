@@ -1,0 +1,59 @@
+.robot-details-panel {
+  flex: 1;
+  min-width: 240px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.robot-details-heading {
+  font-size: 14px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+.robot-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.robot-details-clear {
+  font-size: 12px;
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.robot-details-empty {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+.robot-details-attention {
+  color: #c62828;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.robot-details-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.robot-details-list dt {
+  color: #666;
+}
+
+.robot-details-list dd {
+  margin: 0;
+}

@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.vercel
+
+# Original challenge bundle (duplicated into public/data/, which is what
+# the app actually serves at runtime); not required to build, test, or run
+# the project.
+Peppermint_SDE1_Challenge/
+
+# Environment files
+.env
+.env.local
+.env.*.local
