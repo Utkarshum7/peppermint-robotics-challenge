@@ -5,6 +5,10 @@ Dashboard," Assignment 1). An operator dashboard for an 8-robot fleet: a live si
 recorded-log replay, a genuinely independent synthetic live feed, a fleet-level trend chart,
 and robot search/attention tooling — all driven by one shared fleet state.
 
+## Live Demo
+
+**https://peppermint-robotics-challenge.vercel.app/**
+
 ## Project Summary
 
 This is the **frontend assignment**. It visualizes and operates a simulated warehouse robot
