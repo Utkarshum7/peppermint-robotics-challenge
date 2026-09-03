@@ -1,9 +1,11 @@
 .robot-details-panel {
   flex: 1;
   min-width: 240px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  background: #fff;
+  padding: var(--panel-padding);
 }
 
 .robot-details-heading {
@@ -25,6 +27,7 @@
   font-size: 12px;
   border: 1px solid #bbb;
   background: #fff;
+  color: var(--color-text);
   border-radius: 4px;
   padding: 2px 8px;
   cursor: pointer;
@@ -37,7 +40,10 @@
 }
 
 .robot-details-attention {
-  color: #c62828;
+  color: var(--color-attention);
+  background: var(--color-attention-bg);
+  border-radius: 4px;
+  padding: 6px 8px;
   font-size: 13px;
   margin: 0 0 12px;
 }

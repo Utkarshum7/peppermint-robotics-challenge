@@ -3,12 +3,62 @@
   min-width: 320px;
 }
 
+.fleet-map-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 8px;
+}
+
 .fleet-map-heading {
   font-size: 14px;
-  margin: 0 0 8px;
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #666;
+}
+
+/* Small, static legend — same colors/shapes the markers themselves use
+   (RobotMarker.css), so a first-time reviewer doesn't have to guess what
+   a green vs. red border means before selecting anything. */
+.fleet-map-legend {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.fleet-map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fleet-map-legend-item::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.fleet-map-legend-item--working::before {
+  border-color: var(--color-working);
+}
+
+.fleet-map-legend-item--idle::before {
+  border-color: var(--color-neutral);
+}
+
+.fleet-map-legend-item--attention::before {
+  border-color: var(--color-attention);
 }
 
 /* aspect-ratio keeps the container's width:height locked to the source
@@ -20,7 +70,9 @@
   width: 100%;
   aspect-ratio: 900 / 560;
   background: #f0f0f0;
-  border-radius: 4px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
   overflow: hidden;
 }
 

@@ -13,11 +13,11 @@ export function FleetOverview() {
 
   return (
     <section className="fleet-overview" aria-label="Fleet overview">
-      <div className="fleet-overview-metric">
+      <div className="fleet-overview-metric fleet-overview-metric--total">
         <span className="fleet-overview-value">{metrics.totalRobots}</span>
         <span className="fleet-overview-label">Total robots</span>
       </div>
-      <div className="fleet-overview-metric">
+      <div className="fleet-overview-metric fleet-overview-metric--working">
         <span className="fleet-overview-value">{metrics.workingCount}</span>
         <span className="fleet-overview-label">Working</span>
       </div>
@@ -25,7 +25,7 @@ export function FleetOverview() {
         <span className="fleet-overview-value">{metrics.attentionCount}</span>
         <span className="fleet-overview-label">Needs attention</span>
       </div>
-      <div className="fleet-overview-metric">
+      <div className="fleet-overview-metric fleet-overview-metric--battery">
         <span className="fleet-overview-value">{metrics.averageBattery.toFixed(1)}%</span>
         <span className="fleet-overview-label">Avg battery</span>
       </div>

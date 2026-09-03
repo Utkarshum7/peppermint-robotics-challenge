@@ -39,13 +39,23 @@ export function ReplayControls({ replay, replayState, dispatch }: ReplayControls
   return (
     <>
       <div className="mode-controls-buttons">
-        <button type="button" onClick={replay.play} disabled={replay.isLoading || isPlaying || isCompleted}>
+        <button
+          type="button"
+          className="mode-controls-btn mode-controls-btn--primary"
+          onClick={replay.play}
+          disabled={replay.isLoading || isPlaying || isCompleted}
+        >
           Play
         </button>
-        <button type="button" onClick={replay.pause} disabled={replay.isLoading || !isPlaying}>
+        <button
+          type="button"
+          className="mode-controls-btn"
+          onClick={replay.pause}
+          disabled={replay.isLoading || !isPlaying}
+        >
           Pause
         </button>
-        <button type="button" onClick={replay.reset} disabled={replay.isLoading}>
+        <button type="button" className="mode-controls-btn" onClick={replay.reset} disabled={replay.isLoading}>
           Reset
         </button>
       </div>

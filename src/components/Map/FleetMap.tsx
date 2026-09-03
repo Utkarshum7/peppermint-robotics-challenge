@@ -19,7 +19,14 @@ export function FleetMap() {
 
   return (
     <section className="fleet-map-section" aria-label="Site map">
-      <h2 className="fleet-map-heading">Site Map</h2>
+      <div className="fleet-map-header">
+        <h2 className="fleet-map-heading">Site Map</h2>
+        <ul className="fleet-map-legend" aria-label="Marker status legend">
+          <li className="fleet-map-legend-item fleet-map-legend-item--working">Working</li>
+          <li className="fleet-map-legend-item fleet-map-legend-item--idle">Idle</li>
+          <li className="fleet-map-legend-item fleet-map-legend-item--attention">Needs attention</li>
+        </ul>
+      </div>
       <div className="fleet-map-container">
         <img src={LAYOUT_IMAGE_URL} alt="Warehouse site layout" className="fleet-map-image" />
         {robots.map((robot) => {

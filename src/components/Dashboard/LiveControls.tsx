@@ -21,10 +21,15 @@ export function LiveControls({ live, liveState, onStart }: LiveControlsProps) {
   return (
     <>
       <div className="mode-controls-buttons">
-        <button type="button" onClick={onStart} disabled={isRunning}>
+        <button
+          type="button"
+          className="mode-controls-btn mode-controls-btn--primary"
+          onClick={onStart}
+          disabled={isRunning}
+        >
           Start live
         </button>
-        <button type="button" onClick={live.stop} disabled={!isRunning}>
+        <button type="button" className="mode-controls-btn" onClick={live.stop} disabled={!isRunning}>
           Stop live
         </button>
       </div>

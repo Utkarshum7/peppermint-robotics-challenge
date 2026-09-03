@@ -45,6 +45,10 @@ export function ModeControls() {
   return (
     <section className="mode-controls" aria-label="Replay and live controls">
       <h2 className="mode-controls-heading">Replay / Live</h2>
+      <p className="mode-controls-intro">
+        Play back the recorded log, or switch to a live synthetic feed — the fleet map and
+        trend chart above update from whichever source is active.
+      </p>
 
       <div className="mode-tabs" role="tablist" aria-label="Data source">
         <button

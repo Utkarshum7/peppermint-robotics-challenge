@@ -1,5 +1,31 @@
 /* Minimal reset, applied globally before any component-specific styling. */
 
+:root {
+  /* Shared semantic colors — the same values that were previously
+     hardcoded in each component's own CSS file, named once here so the
+     panel/metric/status treatments added across components stay visually
+     consistent instead of drifting. Values are unchanged from what the
+     app already used. */
+  --color-accent: #1565c0;
+  --color-working: #2e7d32;
+  --color-working-bg: #edf7ee;
+  --color-attention: #c62828;
+  --color-attention-bg: #fdecea;
+  --color-neutral: #616161;
+  --color-neutral-bg: #f1f3f5;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-border: #ddd;
+
+  /* Shared panel treatment (map, search, details, mode controls, trend
+     chart all used the identical border/radius/padding rule separately —
+     centralized so a future spacing tweak only happens in one place). */
+  --panel-border: 1px solid var(--color-border);
+  --panel-radius: 6px;
+  --panel-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --panel-padding: 16px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +39,7 @@ body {
 body {
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
   color-scheme: light dark;
-  color: #1a1a1a;
+  color: var(--color-text);
   background: #fafafa;
 }
 

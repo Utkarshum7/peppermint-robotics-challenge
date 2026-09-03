@@ -1,7 +1,9 @@
 .search-panel {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  background: #fff;
+  padding: var(--panel-padding);
 }
 
 .search-panel-heading {
@@ -47,9 +49,9 @@
 }
 
 .search-tab--active {
-  background: #1565c0;
+  background: var(--color-accent);
   color: #fff;
-  border-color: #1565c0;
+  border-color: var(--color-accent);
 }
 
 .search-panel-empty {
@@ -77,25 +79,52 @@
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
   gap: 6px 10px;
-  padding: 6px 8px;
-  border: 1px solid #ddd;
+  padding: 7px 10px 7px 8px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-neutral);
   border-radius: 4px;
   background: #fff;
+  /* Explicit, rather than left to inherit: a bare <button> otherwise picks
+     up the browser's dark-color-scheme default text color (from index.css's
+     `color-scheme: light dark`), which is invisible against this row's
+     white background in a dark-preferring browser — this is what was
+     making search-result-id (the robot ID) unreadable. */
+  color: var(--color-text);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 12.5px;
+}
+
+/* Left accent reuses the same tier colors as the map markers
+   (RobotMarker.css) and the fleet overview cards — one status-color
+   vocabulary across the whole app, not a second one invented for this list. */
+.search-result--working {
+  border-left-color: var(--color-working);
+}
+
+.search-result--attention {
+  border-left-color: var(--color-attention);
 }
 
 .search-result--selected {
-  border-color: #1565c0;
+  border-color: var(--color-accent);
+  border-left-color: var(--color-accent);
   background: #eaf2fb;
 }
 
 .search-result-id {
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .search-result-type {
-  color: #666;
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--color-neutral-bg);
+  color: var(--color-text-muted);
+  font-size: 11px;
+  text-transform: capitalize;
+  justify-self: start;
 }
 
 .search-result-status {
@@ -105,10 +134,11 @@
 .search-result-battery {
   text-align: right;
   color: #444;
+  font-variant-numeric: tabular-nums;
 }
 
 .search-result-attention {
   grid-column: 1 / -1;
-  color: #b00020;
+  color: var(--color-attention);
   font-size: 11px;
 }

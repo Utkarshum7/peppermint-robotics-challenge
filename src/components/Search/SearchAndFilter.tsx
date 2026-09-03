@@ -75,11 +75,19 @@ export function SearchAndFilter() {
             const attentionReason = getAttentionReason(robot);
             const isSelected = state.selectedRobotId === robot.robotId;
 
+            const resultClassName = [
+              "search-result",
+              `search-result--${presentation.tier}`,
+              isSelected ? "search-result--selected" : "",
+            ]
+              .filter(Boolean)
+              .join(" ");
+
             return (
               <li key={robot.robotId}>
                 <button
                   type="button"
-                  className={isSelected ? "search-result search-result--selected" : "search-result"}
+                  className={resultClassName}
                   aria-pressed={isSelected}
                   onClick={() => dispatch({ type: "SELECT_ROBOT", robotId: robot.robotId })}
                 >

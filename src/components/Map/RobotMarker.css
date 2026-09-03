@@ -13,6 +13,11 @@
   justify-content: center;
   border: 2px solid #888;
   background: #fff;
+  /* Explicit, rather than left to inherit: a bare <button> otherwise picks
+     up the browser's dark-color-scheme default text color (from index.css's
+     `color-scheme: light dark`), which is invisible against this marker's
+     white fill in a dark-preferring browser. */
+  color: var(--color-text);
   cursor: pointer;
   padding: 0;
   font: inherit;

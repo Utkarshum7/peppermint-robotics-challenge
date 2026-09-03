@@ -1,27 +1,80 @@
 .fleet-overview {
   display: flex;
-  gap: 24px;
   flex-wrap: wrap;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  background: #fff;
+  overflow: hidden;
 }
 
+/* Each metric is a distinct card, not just a label/value pair floating in
+   a shared box — a color-coded top accent bar (per metric's meaning) plus
+   a divider between cards gives the "separate at a glance" hierarchy the
+   plain flex-with-gap version didn't have. */
 .fleet-overview-metric {
+  flex: 1;
+  min-width: 130px;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  padding: 14px 20px;
+  border-top: 3px solid var(--color-neutral);
+}
+
+.fleet-overview-metric + .fleet-overview-metric {
+  border-left: 1px solid var(--color-border);
 }
 
 .fleet-overview-value {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
 }
 
 .fleet-overview-label {
   font-size: 12px;
-  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+/* Total robots stays neutral — it's a count, not a health signal. */
+.fleet-overview-metric--total {
+  border-top-color: var(--color-neutral);
+}
+
+/* Working reads as healthy/positive. */
+.fleet-overview-metric--working {
+  border-top-color: var(--color-working);
+}
+
+.fleet-overview-metric--working .fleet-overview-value {
+  color: var(--color-working);
+}
+
+/* Needs attention is the one metric that should visually interrupt —
+   tinted background in addition to the accent bar, not just colored text,
+   so it reads as a warning state rather than an incidental number. */
+.fleet-overview-metric--attention {
+  border-top-color: var(--color-attention);
+  background: var(--color-attention-bg);
 }
 
 .fleet-overview-metric--attention .fleet-overview-value {
-  color: #c62828;
+  color: var(--color-attention);
+}
+
+/* Avg battery gets the accent blue used for interactive/informational
+   elements elsewhere in the app (speed buttons, trend line) — ties it to
+   "a live reading," distinct from the working/attention health colors. */
+.fleet-overview-metric--battery {
+  border-top-color: var(--color-accent);
+}
+
+.fleet-overview-metric--battery .fleet-overview-value {
+  color: var(--color-accent);
 }

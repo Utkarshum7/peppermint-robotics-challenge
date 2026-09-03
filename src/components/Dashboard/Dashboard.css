@@ -6,12 +6,18 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+}
+
+.dashboard-header {
+  padding-bottom: 4px;
 }
 
 .dashboard-header h1 {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .dashboard-controls-row {
@@ -58,27 +64,5 @@
 }
 
 .dashboard-error {
-  color: #b00020;
-}
-
-.placeholder-section {
-  border: 1px dashed #bbb;
-  border-radius: 4px;
-  padding: 16px;
-  flex: 1;
-  min-width: 240px;
-}
-
-.placeholder-section h2 {
-  font-size: 14px;
-  margin: 0 0 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #666;
-}
-
-.placeholder-section p {
-  margin: 0;
-  color: #888;
-  font-size: 14px;
+  color: var(--color-attention);
 }

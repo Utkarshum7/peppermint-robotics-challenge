@@ -1,24 +1,32 @@
 .mode-controls {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  background: #fff;
+  padding: var(--panel-padding);
   flex: 1;
   min-width: 240px;
 }
 
 .mode-controls-heading {
   font-size: 14px;
-  margin: 0 0 8px;
+  margin: 0 0 4px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #666;
+}
+
+.mode-controls-intro {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--color-text-muted);
 }
 
 .mode-tabs {
   display: flex;
   gap: 4px;
   margin-bottom: 12px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mode-tab {
@@ -32,8 +40,8 @@
 }
 
 .mode-tab--active {
-  color: #1565c0;
-  border-bottom-color: #1565c0;
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -43,16 +51,34 @@
   flex-wrap: wrap;
 }
 
-.mode-controls-buttons button {
-  padding: 6px 12px;
+.mode-controls-btn {
+  padding: 6px 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background: #fff;
   color: #222;
+  font-size: 13px;
   cursor: pointer;
 }
 
-.mode-controls-buttons button:disabled {
+/* The one action that starts something (Play / Start live) is visually
+   the default next step — filled with the app's accent color — while
+   Pause/Reset/Stop stay outlined as secondary actions available once
+   something is already running. */
+.mode-controls-btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.mode-controls-btn--primary:disabled {
+  background: #f5f5f5;
+  border-color: #ccc;
+  color: #999;
+}
+
+.mode-controls-btn:disabled {
   background: #f5f5f5;
   color: #999;
   cursor: not-allowed;
@@ -82,9 +108,9 @@
 }
 
 .mode-controls-speed-btn--active {
-  background: #1565c0;
+  background: var(--color-accent);
   color: #fff;
-  border-color: #1565c0;
+  border-color: var(--color-accent);
 }
 
 .mode-controls-speed-btn:disabled {
@@ -99,7 +125,7 @@
 }
 
 .mode-controls-error {
-  color: #b00020;
+  color: var(--color-attention);
   font-size: 13px;
 }
 

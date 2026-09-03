@@ -1,7 +1,9 @@
 .trend-chart {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 16px;
+  border: var(--panel-border);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  background: #fff;
+  padding: var(--panel-padding);
 }
 
 .trend-chart-heading {
@@ -43,12 +45,12 @@
 
 .trend-chart-line {
   fill: none;
-  stroke: #1565c0;
+  stroke: var(--color-accent);
   stroke-width: 2;
 }
 
 .trend-chart-dot {
-  fill: #1565c0;
+  fill: var(--color-accent);
 }
 
 .trend-chart-current {
