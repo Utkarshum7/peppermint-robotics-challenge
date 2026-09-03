@@ -44,9 +44,8 @@ From `package.json`:
 ## Project Structure
 
 ```
-Peppermint_SDE1_Challenge/   Original challenge package (PDF + source data), untouched
-public/data/                 Runtime copies of robots.json / events.jsonl / layout.png,
-                              fetched by the app at runtime (see src/data/)
+public/data/                 robots.json / events.jsonl / layout.png, fetched by the app
+                              at runtime (see src/data/)
 src/
   domain/                    Pure business logic: models, classification, event
                              validation/normalization/application, fleet metrics & history
@@ -118,6 +117,10 @@ Type-checks (`tsc -b`) and produces a static production build in `dist/`.
   fleet-mutation path for live data.
 - Live mode has its own synthetic clock (`state.live.tick`), reset to 0 every time the app
   switches into Live mode — it is never derived from Replay's recorded timestamp.
+- Rate: a new event is generated for the whole fleet roughly every 4 seconds of wall-clock
+  time (`LIVE_TICK_INTERVAL_MS` in `src/live/liveConstants.ts`), each tick advancing the
+  synthetic clock by 5 seconds (`LIVE_TICK_STEP_SECONDS`) — close to the recorded log's own
+  5-second reporting interval, without being tied to it.
 
 ## Fleet Trend
 
